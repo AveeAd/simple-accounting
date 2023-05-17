@@ -1,6 +1,7 @@
 import React from 'react';
 import { MenuProps } from 'antd';
 import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
+import { StyledMenuLink } from '../components/ui/StyledComponents';
 
 export type MenuItem = Required<MenuProps>['items'][number];
 
@@ -14,15 +15,15 @@ function getItem(label: React.ReactNode, key: React.Key, icon?: React.ReactNode,
 }
 
 export const SIDERMENUS: MenuItem[] = [
-	getItem('Dashboard', 1, <PieChartOutlined />),
-	getItem('Debit', 2, <DesktopOutlined />),
-	getItem('Credit', 3, <DesktopOutlined />),
-	getItem('Banks', 4, <UserOutlined />),
-	getItem('Employees', 5, <TeamOutlined />),
-	getItem('Reports', 6, <FileOutlined />, [
-		getItem('Daily', 61),
-		getItem('Weekly', 62),
-		getItem('Monthly', 63),
-		getItem('Yearly', 64),
+	getItem(<StyledMenuLink to="/">Dashboard</StyledMenuLink>, 1, <PieChartOutlined />),
+	getItem(<StyledMenuLink to="/debit">Debit</StyledMenuLink>, 2, <DesktopOutlined />),
+	getItem(<StyledMenuLink to="/credit">Credit</StyledMenuLink>, 3, <DesktopOutlined />),
+	getItem(<StyledMenuLink to="/debit">Banks</StyledMenuLink>, 4, <UserOutlined />),
+	getItem(<StyledMenuLink to="/inventory">Inventory</StyledMenuLink>, 5, <TeamOutlined />),
+	getItem(<StyledMenuLink to="/reports">Reports</StyledMenuLink>, 6, <FileOutlined />, [
+		getItem(<StyledMenuLink to="/report/daily">Daily</StyledMenuLink>, 61),
+		getItem(<StyledMenuLink to="/report/weekly">Weekly</StyledMenuLink>, 62),
+		getItem(<StyledMenuLink to="/report/monthly">Monthly</StyledMenuLink>, 63),
+		getItem(<StyledMenuLink to="/report/yearly">Yearly</StyledMenuLink>, 64),
 	]),
 ];

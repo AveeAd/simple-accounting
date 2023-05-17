@@ -3,15 +3,21 @@ import { Outlet } from 'react-router-dom';
 import { Layout, Menu, theme, FloatButton } from 'antd';
 import { SIDERMENUS } from '../constants';
 import { PlusOutlined } from '@ant-design/icons';
+import AddModal from '../components/AddModal';
 
 //
 const { Header, Content, Footer, Sider } = Layout;
 
 const App: React.FC = () => {
 	const [collapsed, setCollapsed] = useState(false);
+	const [openAddModal, setOpenAddModal] = useState(false);
 	const {
 		token: { colorBgContainer },
 	} = theme.useToken();
+
+	function handleCloseModal() {
+		setOpenAddModal(false);
+	}
 
 	return (
 		<Layout style={{ minHeight: '100vh' }}>
@@ -27,8 +33,9 @@ const App: React.FC = () => {
 				<Footer style={{ textAlign: 'center' }}>Simple Accounting ©2023 Insufferable Retard</Footer>
 			</Layout>
 			<FloatButton.Group shape="circle" style={{ right: 24 }}>
-				<FloatButton type="primary" icon={<PlusOutlined />} />
+				<FloatButton type="primary" icon={<PlusOutlined />} onClick={() => setOpenAddModal(true)} />
 			</FloatButton.Group>
+			<AddModal openModal={openAddModal} handleClose={handleCloseModal} />
 		</Layout>
 	);
 };
