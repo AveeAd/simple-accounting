@@ -3,6 +3,8 @@ import Layout from './layouts';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
+import Account from './pages/Account';
+import NewAccount from './pages/Account/NewAccount';
 
 function App() {
 	return (
@@ -17,6 +19,9 @@ function App() {
 							</>
 						}
 					/>
+					<Route path="/account" element={<Account />}>
+						<Route path="new/:type" element={<NewAccount />} />
+					</Route>
 				</Route>
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>

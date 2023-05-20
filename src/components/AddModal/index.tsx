@@ -11,11 +11,11 @@ interface IAddModal {
 const AddModal: React.FC<IAddModal> = ({ openModal, handleClose }) => {
 	return (
 		<>
-			<Modal open={openModal} onCancel={handleClose}>
+			<Modal open={openModal} footer={[]} onCancel={handleClose}>
 				<Row gutter={8}>
 					<Col span={6}>
 						<h4>Customer</h4>
-						<StyledLink to="/account/new">Account</StyledLink>
+						<StyledLink to="/account/new/dr">Account</StyledLink>
 						<StyledLink to="/invoice/new">Invoice</StyledLink>
 						<StyledLink to="/estimate/new">Estimate</StyledLink>
 						<StyledLink to="/receipt/sales/new">Sales Receipt</StyledLink>
@@ -23,7 +23,7 @@ const AddModal: React.FC<IAddModal> = ({ openModal, handleClose }) => {
 					</Col>
 					<Col span={6}>
 						<h4>Supplier</h4>
-						<StyledLink to="/account/new">Account</StyledLink>
+						<StyledLink to="/account/new/cr">Account</StyledLink>
 						<StyledLink to="/bill/new">Bill</StyledLink>
 						<StyledLink to="/order/new">Purchase Order</StyledLink>
 						<StyledLink to="/expense/new">Expense</StyledLink>
