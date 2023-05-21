@@ -4,6 +4,7 @@ import { Layout, Menu, theme, FloatButton, Breadcrumb } from 'antd';
 import { SIDERMENUS } from '../constants';
 import { PlusOutlined } from '@ant-design/icons';
 import AddModal from '../components/AddModal';
+import { parseSlug } from '../_helpers/methods';
 
 //
 const { Header, Content, Footer, Sider } = Layout;
@@ -28,7 +29,7 @@ const App: React.FC = () => {
 			let path = [...arr];
 			path.splice(index + 1);
 			return {
-				title: <Link to={'/' + path.join('/')}>{route.toUpperCase()}</Link>,
+				title: <Link to={'/' + path.join('/')}>{parseSlug(route).toUpperCase()}</Link>,
 			};
 		});
 

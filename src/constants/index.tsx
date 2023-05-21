@@ -15,15 +15,21 @@ function getItem(label: React.ReactNode, key: React.Key, icon?: React.ReactNode,
 }
 
 export const SIDERMENUS: MenuItem[] = [
-	getItem(<StyledMenuLink to="/">Dashboard</StyledMenuLink>, 1, <PieChartOutlined />),
-	getItem(<StyledMenuLink to="/debit">Debit</StyledMenuLink>, 2, <DesktopOutlined />),
-	getItem(<StyledMenuLink to="/credit">Credit</StyledMenuLink>, 3, <DesktopOutlined />),
-	getItem(<StyledMenuLink to="/debit">Banks</StyledMenuLink>, 4, <UserOutlined />),
-	getItem(<StyledMenuLink to="/inventory">Inventory</StyledMenuLink>, 5, <TeamOutlined />),
-	getItem(<StyledMenuLink to="/reports">Reports</StyledMenuLink>, 6, <FileOutlined />, [
-		getItem(<StyledMenuLink to="/report/daily">Daily</StyledMenuLink>, 61),
-		getItem(<StyledMenuLink to="/report/weekly">Weekly</StyledMenuLink>, 62),
-		getItem(<StyledMenuLink to="/report/monthly">Monthly</StyledMenuLink>, 63),
-		getItem(<StyledMenuLink to="/report/yearly">Yearly</StyledMenuLink>, 64),
+	getItem(<StyledMenuLink to="/">Dashboard</StyledMenuLink>, '1', <PieChartOutlined />),
+	getItem(<StyledMenuLink to="/dr">Customers</StyledMenuLink>, '2', <DesktopOutlined />),
+	getItem(<StyledMenuLink to="/cr">Suppliers</StyledMenuLink>, '3', <DesktopOutlined />),
+	getItem(<StyledMenuLink to="/debit">Banks</StyledMenuLink>, '4', <UserOutlined />),
+	getItem(<StyledMenuLink to="/inventory">Inventory</StyledMenuLink>, '5', <TeamOutlined />),
+	getItem(<StyledMenuLink to="/reports">Reports</StyledMenuLink>, '6', <FileOutlined />, [
+		getItem(<StyledMenuLink to="/report/daily">Daily</StyledMenuLink>, '61'),
+		getItem(<StyledMenuLink to="/report/weekly">Weekly</StyledMenuLink>, '62'),
+		getItem(<StyledMenuLink to="/report/monthly">Monthly</StyledMenuLink>, '63'),
+		getItem(<StyledMenuLink to="/report/yearly">Yearly</StyledMenuLink>, '64'),
 	]),
+];
+
+export const ACCOUNTMENUS: MenuItem[] = [
+	getItem(<StyledMenuLink to="/account">Accounts</StyledMenuLink>, '1', null),
+	getItem(<StyledMenuLink to="/account/new/dr">New Customer</StyledMenuLink>, 'dr', null),
+	getItem(<StyledMenuLink to="/account/new/cr">New Suppliers</StyledMenuLink>, 'cr', null),
 ];
