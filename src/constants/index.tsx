@@ -16,9 +16,9 @@ function getItem(label: React.ReactNode, key: React.Key, icon?: React.ReactNode,
 
 export const SIDERMENUS: MenuItem[] = [
 	getItem(<StyledMenuLink to="/">Dashboard</StyledMenuLink>, '1', <PieChartOutlined />),
-	getItem(<StyledMenuLink to="/dr">Customers</StyledMenuLink>, '2', <DesktopOutlined />),
-	getItem(<StyledMenuLink to="/cr">Suppliers</StyledMenuLink>, '3', <DesktopOutlined />),
-	getItem(<StyledMenuLink to="/debit">Banks</StyledMenuLink>, '4', <UserOutlined />),
+	getItem(<StyledMenuLink to="/customer">Customers</StyledMenuLink>, '2', <DesktopOutlined />),
+	getItem(<StyledMenuLink to="/supplier">Suppliers</StyledMenuLink>, '3', <DesktopOutlined />),
+	getItem(<StyledMenuLink to="/bank">Banks</StyledMenuLink>, '4', <UserOutlined />),
 	getItem(<StyledMenuLink to="/inventory">Inventory</StyledMenuLink>, '5', <TeamOutlined />),
 	getItem(<StyledMenuLink to="/reports">Reports</StyledMenuLink>, '6', <FileOutlined />, [
 		getItem(<StyledMenuLink to="/report/daily">Daily</StyledMenuLink>, '61'),
@@ -30,6 +30,11 @@ export const SIDERMENUS: MenuItem[] = [
 
 export const ACCOUNTMENUS: MenuItem[] = [
 	getItem(<StyledMenuLink to="/account">Accounts</StyledMenuLink>, '1', null),
-	getItem(<StyledMenuLink to="/account/new/dr">New Customer</StyledMenuLink>, 'dr', null),
-	getItem(<StyledMenuLink to="/account/new/cr">New Suppliers</StyledMenuLink>, 'cr', null),
+	getItem(<StyledMenuLink to="/account/new/customer">New Customer</StyledMenuLink>, 'dr', null),
+	getItem(<StyledMenuLink to="/account/new/supplier">New Suppliers</StyledMenuLink>, 'cr', null),
+];
+
+export const INVENTORYMENUS: MenuItem[] = [
+	getItem(<StyledMenuLink to="/inventory">Inventory</StyledMenuLink>, '1'),
+	getItem(<StyledMenuLink to="/inventory/product">Products</StyledMenuLink>, 'product'),
 ];

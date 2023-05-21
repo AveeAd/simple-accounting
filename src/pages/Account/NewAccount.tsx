@@ -5,19 +5,19 @@ import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const accOptions = [
-	{ value: 'dr', label: 'Customer' },
-	{ value: 'cr', label: 'Supplier' },
+	{ value: 'customer', label: 'Customer' },
+	{ value: 'supplier', label: 'Supplier' },
 ];
 
 const NewAccount = () => {
 	const { type } = useParams();
-	const [accType, setAccType] = useState<'dr' | 'cr'>(type === 'dr' ? 'dr' : 'cr');
+	const [accType, setAccType] = useState<'customer' | 'supplier'>(type === 'supplier' ? 'supplier' : 'customer');
 	const { register, handleSubmit } = useForm();
 	useEffect(() => {
-		if (type === 'dr') setAccType('dr');
-		if (type === 'cr') setAccType('cr');
+		if (type === 'customer') setAccType('customer');
+		if (type === 'supplier') setAccType('supplier');
 	}, [type]);
-	const handleTypeChange = (value: 'dr' | 'cr') => {
+	const handleTypeChange = (value: 'supplier' | 'customer') => {
 		setAccType(value);
 	};
 	const onSubmit = (data: any) => {
@@ -36,6 +36,7 @@ const NewAccount = () => {
 						defaultValue={type}
 						value={accType}
 						onChange={handleTypeChange}
+						disabled
 					/>
 				</Col>
 			</Row>
@@ -54,7 +55,7 @@ const NewAccount = () => {
 				</Col>
 			</Row>
 			<Divider orientation="left" plain>
-				{accType === 'dr' ? "Customer's" : "Supplier's"} Detail
+				{accType === 'customer' ? "Customer's" : "Supplier's"} Detail
 			</Divider>
 			<Row gutter={[16, 16]}>
 				<Col span={6}>
